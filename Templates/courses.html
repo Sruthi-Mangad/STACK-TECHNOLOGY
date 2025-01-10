@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Stack Technology Centre | Courses</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+   <link href="{% static 'img/favicon.png' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %} " rel="stylesheet">
+    <style>
+    
+    span{
+        color:rgb(1, 1, 55);
+    }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          
+          /* body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+          } */
+          
+          .couser-silder {
+            height: 80vh;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+          }
+          
+          .couser-silder .item {
+            
+            width: 200px;
+            height: 300px;
+            list-style-type: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+            transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+          
+            &:nth-child(1),
+            &:nth-child(2) {
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              transform: none;
+              border-radius: 0;
+              box-shadow: none;
+              opacity: 1;
+            }
+          
+            &:nth-child(3) {
+              left: 50%;
+            }
+            &:nth-child(4) {
+              left: calc(50% + 220px);
+            }
+            &:nth-child(5) {
+              left: calc(50% + 440px);
+            }
+            &:nth-child(6) {
+              left: calc(50% + 660px);
+              opacity: 0;
+            }
+          }
+          
+          .couser-silder .content {
+            width: min(30vw, 400px);
+            position: absolute;
+            top: 50%;
+            left: 3rem;
+            transform: translateY(-50%);
+            font: 400 0.85rem helvetica, sans-serif;
+            color: white;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            display: none;
+          
+            & .title {
+              font-family: "arial-black";
+              text-transform: uppercase;
+              font-size: 40px;
+              color: white;
+            }
+          
+            & .description {
+              line-height: 1.7;
+              margin: 1rem 0 1.5rem;
+              font-size: 0.8rem;
+            }
+          
+            & button {
+              width: fit-content;
+              background-color: rgba(0, 0, 0, 0.1);
+              color: white;
+              border: 2px solid white;
+              border-radius: 0.25rem;
+              padding: 0.75rem;
+              cursor: pointer;
+            }
+          }
+          
+          .couser-silder .item:nth-of-type(2) .content {
+            display: block;
+            animation: show 0.75s ease-in-out 0.3s forwards;
+          }
+          
+          @keyframes show {
+            0% {
+              filter: blur(5px);
+              transform: translateY(calc(-50% + 75px));
+            }
+            100% {
+              opacity: 1;
+              filter: blur(0);
+            }
+          }
+          
+          .couser-silder .nav {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            user-select: none;
+          
+            & .btn {
+              background-color: rgba(255, 255, 255, 0.5);
+              color: rgba(0, 0, 0, 0.7);
+              border: 2px solid rgba(0, 0, 0, 0.6);
+              margin: 0 0.25rem;
+              padding: 0.75rem;
+              border-radius: 50%;
+              cursor: pointer;
+          
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.3);
+              }
+            }
+          }
+          
+          @media (width > 650px) and (width < 900px) {
+            .couser-silder .content {
+              & .title {
+                font-size: 1rem;
+              }
+              & .description {
+                font-size: 0.7rem;
+              }
+              & button {
+                font-size: 0.7rem;
+              }
+            }
+            .couser-silder .item {
+              width: 160px;
+              height: 270px;
+          
+              &:nth-child(3) {
+                left: 50%;
+              }
+              &:nth-child(4) {
+                left: calc(50% + 170px);
+              }
+              &:nth-child(5) {
+                left: calc(50% + 340px);
+              }
+              &:nth-child(6) {
+                left: calc(50% + 510px);
+                opacity: 0;
+              }
+            }
+          }
+          
+          @media (width < 650px) {
+            .couser-silder .content {
+              & .title {
+                font-size: 0.9rem;
+              }
+              & .description {
+                font-size: 0.65rem;
+              }
+              & button {
+                font-size: 0.7rem;
+              }
+            }
+            .couser-silder .item {
+              width: 130px;
+              height: 220px;
+          
+              &:nth-child(3) {
+                left: 50%;
+              }
+              &:nth-child(4) {
+                left: calc(50% + 140px);
+              }
+              &:nth-child(5) {
+                left: calc(50% + 280px);
+              }
+              &:nth-child(6) {
+                left: calc(50% + 420px);
+                opacity: 0;
+              }
+            }
+          }
+          
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+<!--    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">-->
+<!--        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">-->
+<!--            <span class="sr-only">Loading...</span>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="{% url 'index' %}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="{% static 'img/logo.png' %}" style="height:80%;" />
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'courses' %}" class="nav-item nav-link">Courses</a>
+                <a href="{% url 'blog' %}" class="nav-item nav-link">Blog</a>
+                <!-- <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
+                    </div>
+                </div> -->
+                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="https://wa.me/+919946886681" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <!-- <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Courses</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Header End -->
+
+    <!-- slider -->
+    <br><br><br>
+    <div class="container-fluid" style="width: 100%; margin:0;padding:0;">
+        <div class="container" style="margin:0;padding:0;width: 100%;    max-width: 100%;">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Our</h6>
+                <h1 class="mb-5">Course Categories</h1>
+            </div>
+            <div class="row g-3" style="--bs-gutter-x: 0;">
+                <main class="couser-silder">
+                    <ul class='slider'>
+                    <li class='item' style="background:linear-gradient(rgba(17, 19, 32, 0.885), rgba(49, 55, 86, 0.564)), url('../static/img/data science slider.jpg');background-position: center;background-size: cover; background-repeat: no-repeat;">
+                        <div class='content'>
+                        <h2 class='title'>DATA SCIENCE</h2>
+                        <p class='description'> Embark on a data-driven journey with our comprehensive Data Science program. In this six-month course, you will delve deep into the world of data analysis, machine  and developing a keen understanding of data manipulation and visualization. By the end of this course, you will be equipped with the make informed decisions, and contribute to the rapidly evolving field of data science.</p>
+                        <button><a style="color: white;" href="{% url 'datascience_ai' %}">Read More</a></button>
+                        </div>
+                    </li>
+                    <li class='item' style="background: linear-gradient(rgba(20, 22, 37, 0.849), rgba(47, 53, 90, 0.607)),url('../static/img/web-development-slider.jpeg');background-position: center;background-size: cover; background-repeat: no-repeat;">
+                        <div class='content'>
+                        <h2 class='title'>WEB DEVELOPMENT</h2>
+                        <p class='description'>Our Web Development course is your gateway to becoming a proficient web 
+                            developer. Over six months, you will learn the ins and outs of front-end and back-end 
+                            development, mastering HTML, CSS, JavaScript, and popular frameworks. With 
+                            hands-on projects, you'll build responsive websites and dynamic web applications. Be 
+                            prepared to enter the ever-expanding world of web development with the 
+                            knowledge and skills you need to succeed.</p>
+                        <button><a style="color: white;" href="{% url 'web_development' %}">Read More</a></button>
+                        </div>
+                    </li>
+                    <li class='item' style="background:linear-gradient(rgba(28, 33, 59, 0.842), rgba(43, 49, 85, 0.522)), url('../static/img/dm-slider.jpg');background-position: center;background-size: cover; background-repeat: no-repeat;">
+                        <div class='content'>
+                        <h2 class='title'>DIGITAL MARKETING</h2>
+                        <p class='description'> Join the digital revolution with our two-month Digital Marketing course. Dive into the 
+                            dynamic world of online marketing, learning the intricacies of SEO, social media 
+                            marketing, content crea:on, and pay-per-click advertising. This course is ideal for 
+                            those looking to leverage digital channels to drive business growth and build a strong 
+                            online presence. </p>
+                        <button><a style="color: white;" href="{% url 'digital_marketing' %}">Read More</a></button>
+                        </div>
+                    </li>
+                    <li class='item' style="background:linear-gradient(rgba(9, 11, 22, 0.829), rgba(46, 53, 89, 0.544)), url('../static/img/gd-slider.jpg');background-position: center;background-size: cover; background-repeat: no-repeat;">
+                        <div class='content'>
+                        <h2 class='title'>GRAPHIC DESIGNING</h2>
+                        <p class='description'>
+                            Unleash your creativity and artistic talents in our Graphic Designing course. Over two 
+                            months, you'll become proficient in design software and principles, mastering the art 
+                            of visual communication. Create eye-catching designs for various media, from print to 
+                            web, and position yourself as a skilled graphic designer ready to take on diverse 
+                            design challenges.
+                        </p>
+                        <button><a style="color: white;" href="{% url 'graphic_design' %}">Read More</a></button>
+                        </div>
+                    </li>
+                    <li class='item' style="background:linear-gradient(rgba(15, 18, 36, 0.792), rgba(53, 58, 87, 0.51)),url('../static/img/scratch-coding-slider.png');background-position: center;background-size: cover; background-repeat: no-repeat;">
+                        <div class='content'>
+                        <h2 class='title'>KIDS CODING</h2>
+                        <p class='description'>
+                            Nurture young minds with our Kids Coding program, introducing children to the world of programming in a
+                            fun and educational environment.
+                        </p>
+                        <button><a style="color: white;" href="{% url 'kids_coding' %}">Read More</a></button>
+                        </div>
+                    </li>
+                    <!-- <li class='item' style="background-image: linear-gradient(rgba(9, 11, 21, 0.819), rgba(63, 65, 78, 0.581)),url('img/Internship-slider.jpeg');background-position: center;background-size: cover; background-repeat: no-repeat;">
+                        <div class='content'>
+                        <h2 class='title'>INTERNSHIP & PROJECT SUPPORT</h2>
+                        <h3>INTERNSHIP & PROJECT SUPPORT</h3>
+                        <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                            adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                            praesentium nisi. Id laboriosam ipsam enim. </p>
+                        <button>Read More</button>
+                        </div>
+                    </li> -->
+                    </ul>
+                    <nav class='nav'>
+                    <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+                    <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+                    </nav>
+                </main>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- end slider -->
+
+
+       <!-- Categories Start -->
+       <!-- <div class="container-xxl py-5 category" id="section-courses"  >
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
+                <h1 class="mb-5">Course Categories</h1>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-7 col-md-6">
+                    <div class="row g-3">
+                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                            <a class="position-relative d-block overflow-hidden" href="/datascience_ai.html">
+                                <img class="img-fluid" src="img/data_science.jpeg" alt="">
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                    <h5 class="m-0">Data Science & AI</h5>
+                                    <small class="text-primary"></small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                            <a class="position-relative d-block overflow-hidden" href="/web_development.html">
+                                <img class="img-fluid" src="img/web_development.jpeg" alt="">
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                    <h5 class="m-0">Web Development</h5>
+                                    <small class="text-primary"></small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                            <a class="position-relative d-block overflow-hidden" href="/graphic_design.html">
+                                <img class="img-fluid" src="img/graphic_design.jpeg" alt="">
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                    <h5 class="m-0">Graphic Design</h5>
+                                    <small class="text-primary"></small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="/digital_marketing.html">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/digital_marketing.jpg" alt="" style="object-fit: cover;">
+                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
+                            <h5 class="m-0">Digital Marketing</h5>
+                            <small class="text-primary"></small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Categories Start -->
+
+
+
+    
+    <!-- Kids coding Start -->
+    <div class="container-xxl py-5" id="section-about_us"  >
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/kids_codong.png' %}" alt="" style="object-fit: contain;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s"  >
+                    <h6 class="section-title bg-white text-start text-primary pe-3">We are Introducing</h6>
+                    <h1 class="mb-4">KIDS CODING</h1>
+                    <p class="mb-4">Nurture young minds with our Kids Coding program, introducing children to the world of programming in a
+                        fun and educational environment</p>
+                    <h3>Our Program Includes:</h3>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Computer Coding</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Maths Logic</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Creative Activities</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Communication Skills</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Simple Projects</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online & Offline Classes</p>
+                        </div>
+                    </div>
+                    <!-- <a class="btn btn-primary py-3 px-5 mt-2" style="border: none;" href="">More</a> -->
+                    <a class="btn btn-primary py-3 px-5 mt-2 know-more" href="{% url 'kids_coding' %}" >
+                        Know More
+                        <img class="list-arrow"  src="{% static '/img/arw-1.gif' %}" width="20%" height="70%" style="padding-left: 5px;" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- kids coding End -->
+    
+
+    <!-- Internship and project Start -->
+    <div class="container-xxl py-5" id="section-about"  >
+        <div class="container">
+            <div class="row g-5" style="--bs-gutter-x: 0;">
+                
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s"  >
+                    <h6 class="section-title bg-white text-start text-primary pe-3">We are Introducing</h6>
+                    <h1 class="mb-4">INTERNSHIP & PROJECT SUPPORT</h1>
+                    <p class="mb-4">Enhance your practical experience with our internship and project support 
+                        opportunities. We offer flexible durations to match your needs, providing valuable 
+                        hands-on experience in real-world projects, and helping you apply your skills and 
+                        knowledge in a professional setting.</p>
+                    <!-- <h3>Our Program Includes:</h3> -->
+                    <div class="row gy-2 gx-4 mb-4">
+                        <!-- <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Computer Coding</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Maths Logic</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Creative Activities</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Communication Skills</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Simple Projects</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online & Offline Classes</p>
+                        </div> -->
+                    </div>
+                    <!-- <a class="btn btn-primary py-3 px-5 mt-2" style="border: none;" href="/internship_project.html">More</a> -->
+<!--                    <a class="btn btn-primary py-3 px-5 mt-2 know-more" href="" >-->
+<!--                        Know More-->
+<!--                        <img class="list-arrow"  src="" width="20%" height="70%" style="padding-left: 5px;" alt="">-->
+<!--                    </a>-->
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/internship.png' %}" alt="" style="object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Internship and project End -->
+
+
+            <!-- Courses Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
+                    <h1 class="mb-5">Popular Courses</h1>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="course-item bg-light">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid" src="{% static 'img/web_development.jpeg' %}" alt="">
+                                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                    <a href="{% url 'web_development' %}" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                    <a href="https://wa.me/+919946886681" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 pb-0">
+                                <h3 class="mb-0"></h3>
+                                <!-- <div class="mb-3">
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small>(123)</small>
+                                </div> -->
+                                <h5 class="mb-4">Web Design & Development Course</h5>
+                            </div>
+                            <div class="d-flex border-top">
+                                <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i></small> -->
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>6 months</small>
+                                <!-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="course-item bg-light">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid" src="{% static 'img/graphic_design.jpeg' %}" alt="">
+                                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                    <a href="{% url 'graphic_design' %}" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                    <a href="https://wa.me/+919946886681" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 pb-0">
+                                <h3 class="mb-0"></h3>
+                                <!-- <div class="mb-3">
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small>(123)</small>
+                                </div> -->
+                                <h5 class="mb-4">Graphic Design & Digital Marketing</h5>
+                            </div>
+                            <div class="d-flex border-top">
+                                <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i></small> -->
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>5 months</small>
+                                <!-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="course-item bg-light">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid" src="{% static 'img/data analtics vs data science.png' %}" alt="">
+                                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                    <a href="{% url 'datascience_ai' %}" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                    <a href="https://wa.me/+919946886681" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 pb-0">
+                                <h3 class="mb-0"></h3>
+                                <!-- <div class="mb-3">
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small>(123)</small>
+                                </div> -->
+                                <h5 class="mb-4">Data Science & AI</h5>
+                            </div>
+                            <div class="d-flex border-top">
+                                <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i></small> -->
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>6 months</small>
+                                <!-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Courses End -->
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
+                <h1 class="mb-5">Expert Instructors</h1>
+            </div>
+            <div class="row g-4">
+
+               {% for i in instructors %}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ i.profile.url  }}" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">{{ i.name }}</h5>
+                            <small>{{ i.specialization }}</small>
+                            <div>{{ i.designation }}</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                    <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>
+                        1st floor, Stack Building,
+                        Near Smart Bazar,
+                        New Bus Stand, Kasaragod
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99 46 88 66 81</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@stackcentre.in</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/stackcentre/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://x.com/stackcentre?t=bcWrHs-0YH3i2uptqUkwyg&s=09"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100092986535359&mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://instagram.com/stackcentre?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/1.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/2.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/1.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/4.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/1.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/4.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Connect With Us</h4>
+                    <p></p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="{% url 'index' %}">stackcentre.in</a>, All Right Reserved.
+
+                        <div class="d-none">
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br> -->
+                            <!-- Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="{% url 'index' %}">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+    <!-- slider js -->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    const slider = document.querySelector(".slider");
+
+    function activate(e) {
+    const items = document.querySelectorAll(".item");
+    e.target.matches(".next") && slider.append(items[0]);
+    e.target.matches(".prev") && slider.prepend(items[items.length - 1]);
+    }
+
+    document.addEventListener("click", activate, false);
+
+  </script>
+
+</body>
+
+</html>

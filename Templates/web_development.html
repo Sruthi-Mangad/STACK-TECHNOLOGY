@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <title>eLEARNING - eLearning HTML Template</title> -->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <title>Stack Technology Centre | Courses | Web Development </title>
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../static/img/web.png) no-repeat;
+            background-size: cover;
+            background-position: 50% 84%;
+        }
+        span{
+            color:rgb(1, 1, 55);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="{% url 'index' %}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="{% static 'img/logo.png' %}" style="height:80%;" />
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'courses' %}" class="nav-item nav-link">Courses</a>
+                <a href="{% url 'blog' %}" class="nav-item nav-link">Blog</a>
+                <!-- <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
+                    </div>
+                </div> -->
+                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="https://wa.me/+919946886681" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">WEB DEVELOPMENT</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Courses</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Web Development</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Categories Start -->
+    <div class="container-xxl py-5 category">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Duration</h6>
+                <h1 class="mb-5">6 Months</h1>
+            </div>
+            <div class="row g-3" style="margin-top: -30px;">
+                <div class="col-lg-7 col-md-6">
+                    <div class="row g-3">
+                        <p style="text-align: justify;padding-right: 10%;padding-left:10%;padding-top: 5%; line-height:2.5em;color:rgb(1, 1, 55);" class="wow zoomIn" data-wow-delay="0.1s">
+                            &emsp;&emsp;&emsp; Our Web Development course is your gateway to becoming a proficient web 
+                            developer. Over six months, you will learn the ins and outs of front-end and back-end 
+                            development, mastering HTML, CSS, JavaScript, and popular frameworks. With 
+                            hands-on projects, you'll build responsive websites and dynamic web applications. Be 
+                            prepared to enter the ever-expanding world of web development with the 
+                            knowledge and skills you need to succeed.
+                        </p>
+                        <!-- <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/datasc.jpeg" alt="">
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                    <h5 class="m-0">Web Design</h5>
+                                    <small class="text-primary">49 Courses</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/cat-2.jpg" alt="">
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                    <h5 class="m-0">Graphic Design</h5>
+                                    <small class="text-primary">49 Courses</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/cat-3.jpg" alt="">
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                    <h5 class="m-0">Video Editing</h5>
+                                    <small class="text-primary">49 Courses</small>
+                                </div>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 400px; margin-top: -70px;">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/web-developmnt.png' %}" alt="" style="object-fit: cover;">
+                        <!-- <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
+                            <h5 class="m-0">Online Marketing</h5>
+                            <small class="text-primary">49 Courses</small>
+                        </div> -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Categories Start -->
+
+    <!--Web development Courses Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
+                <h1 class="mb-5">Web Development Courses</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden" style="text-align: center;">
+                            <img class="img-fluid" src="{% static 'img/pyt.jpg' %}" alt="">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <button onclick="myclick_python()" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</button>
+                                <a href="https://wa.me/+919946886681" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0"></h3>
+                            <!-- <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small>(123)</small>
+                            </div> -->
+                            <h5 class="mb-4">Python | Django Fullstack Development</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                            <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i></small> -->
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>6 months</small>
+                            <!-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden" style="text-align: center;">
+                            <img class="img-fluid" src="{% static 'img/mern.jpg' %}" alt="" style="object-fit: cover;">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <button onclick="myclick_mern()" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</button>
+                                <a href="https://wa.me/+919946886681" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0"></h3>
+                            <!-- <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small>(123)</small>
+                            </div> -->
+                            <h5 class="mb-4">MERN Stack Development</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                            <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i></small> -->
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>6 months</small>
+                            <!-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/data analtics vs data science.png" alt="">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                <a href="https://wa.me/+919946886681" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0"></h3> -->
+                            <!-- <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small>(123)</small>
+                            </div> -->
+                            <!-- <h5 class="mb-4">Data Science & AI</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i></small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>6 months</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Web development Courses End -->
+
+    <!-- Syllubus Start -->
+        <div class="container-xxl py-5 category" style="display: none;" id="python" >
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-center text-primary px-3">What we have to Cover</h6>
+                    <h1 class="mb-5">Python | Django Fullstack Development</h1>
+                </div>
+                <div class="row g-3">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="row g-3">
+                            <div class="row g-3">
+                                <div style="padding-left: 10%;
+                                text-align: justify;
+                                padding-right: 10%;
+                                padding-top: 5%;
+                                line-height: 2.5em;" class="wow zoomIn" data-wow-delay="0.1s">
+                                    <ul style="list-style-type:none;">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                        <b>Introduction to Web Development</b>
+                                                        <ul>
+                                                            <li>Understand the Basics of How the Internet Works.</li>
+                                                            <li>About HTTP, URLs and How Web Browsers Interact with Servers.</li> 
+                                                            <li>Master HTML to Create the Structure of Web Pages.</li>
+                                                            <li>Learn CSS for Styling and Layout.</li>  
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </div>  
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                        <b>Bootstrap 5</b>
+                                                        <ul>
+                                                            <li>Learn the Basics of Bootstrap and Apply it to Designing</li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </div>  
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                        <b>JavaScript</b>
+                                                        <ul>
+                                                            <li>Basic JavaScript Concepts</li>
+                                                            <li>Variables | Data Types | Operators | Control Structures | Functions | Objects & Arrays</li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </div>  
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                       <b> Python Fundamentals</b>
+                                                        <ul>
+                                                            <li>Learn Basic Python Syntax, Data Types, And Control Structures.</li>
+                                                            <li>Understand Python's Functions, Classes, And Object-Oriented Programming (OOP) Concepts.</li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </div>  
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                        <b>Introduction To Django</b>
+                                                        <ul>
+                                                            <li>Understand The MVC (Model-View-Controller) Architecture.</li>
+                                                            <li>Set Up Django Projects And Applications.</li>
+                                                            <li>Learn About Django Templates And Template Language.</li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                        <b>Introduction To Django</b>
+                                                        <ul>
+                                                            <li>Understand The MVC (Model-View-Controller) Architecture.</li>
+                                                            <li>Set Up Django Projects And Applications.</li>
+                                                            <li>Learn About Django Templates And Template Language.</li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                        <b>Django Models And Databases</b>
+                                                        <ul>
+                                                            <li>Dive Into Django Models, Migrations, And Database Relationships.</li>
+                                                            <li>Set Up Django Projects And Applications.</li>
+                                                            <li>Explore Database Concepts Such As Queries, CRUD Operations, And ORM (Object-Relational Mapping).</li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                        <b>Advanced Django Concepts And API Development</b>
+                                                        <ul>
+                                                            <li>Django Views, Templates, And Forms</li>
+                                                            <li>Master Django Views, Including Function-Based Views And Class-Based Views.</li>
+                                                            <li>Work With Django Forms For User Input And Validation.</li>
+                                                            <li>Understand Template Inheritance And Advanced Template Usage.</li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                        <b>Restful APIs With Django REST Framework</b>
+                                                        <ul>
+                                                            <li>Learn Django REST Framework For Building Restful APIs.</li>
+                                                            <li>Understand Serializers, Authentication, And Permissions In Django REST Framework.</li>
+                                                            <li>Build API Endpoints And Handle HTTP Methods (GET, POST, PUT, DELETE).</li>
+                                                        </ul>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                                </div>
+                                                <div class="col-lg-11">
+                                                    <span style="text-align:justify">
+                                                       <b> Web Servers And Hosting | Web Security And Testing </b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Syllubus Start -->
+
+    <!-- Syllubus Start -->
+    <div class="container-xxl py-5 category" style="display: none;" id="mern-stack" >
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">What we have to Cover</h6>
+                <h1 class="mb-5">MERN Stack Development</h1>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-12 col-md-12">
+                    <div class="row g-3">
+                        <div style="padding-left: 10%;
+                        text-align: justify;
+                        padding-right: 10%;
+                        padding-top: 5%;
+                        line-height: 2.5em;" class="wow zoomIn" data-wow-delay="0.1s">
+                            <ul style="list-style-type:none;">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Introduction to Web Development
+                                                <ul>
+                                                    <li>HTML, CSS basics</li>
+                                                    <li>Basic understanding of the internet and how web browsers work</li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>  
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                JavaScript Fundamentals
+                                                <ul>
+                                                    <li>Variables, data types, control structure</li>
+                                                    <li>Functions, objects, arrays</li>
+                                                    <li>DOM Manipulation</li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>  
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Introduction to Git and Version Control
+                                                <ul>
+                                                    <li>Basic commands (commit, push, pull)</li>
+                                                    <li>GitHub repositories</li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>  
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Introduction to React.js
+                                                <ul>
+                                                    <li>JSX, components, props, state</li>
+                                                    <li>React Router</li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>  
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                State Management with Redux
+                                                <ul>
+                                                    <li>Redux fundamentals</li>
+                                                    <li>Actions, reducers, store</li>
+                                                </ul> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Advanced React Concepts
+                                                <ul>
+                                                    <li>Hooks (useState, useEffect, useContext)</li>
+                                                    <li>Higher-order components</li>
+                                                </ul> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Setup Node.js and np
+                                                <ul>
+                                                    <li>Introduction to Express.js</li>
+                                                    <li>RESTful API concepts</li>
+                                                </ul> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                MongoDB and Mongoose
+                                                <ul>
+                                                    <li>Basics of NoSQL databases</li>
+                                                    <li>Setting up MongoDB</li>
+                                                    <li>Mongoose for MongoDB and Node.js integration
+                                                    </li>
+                                                </ul> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Building RESTful APIs with Express.js and MongoDB
+                                                <ul>
+                                                    <li>Create, Read, Update, Delete (CRUD) operations</li>
+                                                    <li>Express middleware</li>
+                                                    <li>Error handling</li>
+                                                </ul> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Integration of Backend and Frontend
+                                                <ul>
+                                                    <li>Connecting the Express.js backend with the React.js frontend</li>
+                                                    <li>API calls from React to Node.js server</li>
+                                                </ul> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Authentication and Authorization
+                                                <ul>
+                                                    <li>JWT (JSON Web Tokens) for authentication</li>
+                                                    <li>Protecting routes and resources</li>
+                                                </ul> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Deployment and Hosting
+                                                <ul>
+                                                    <li>Deployment of the MERN stack application on platforms like Heroku or Netlify</li>
+                                                </ul> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-lg-1">
+                                            <img src="{% static 'img/animated-skip-gradient-ui-icon-769793.gif' %}" width="55px" height="30px" alt="">
+                                        </div>
+                                        <div class="col-lg-11">
+                                            <span style="text-align:justify">
+                                                Final Project
+                                                <ul>
+                                                    <li>Final Project</li>
+                                                    <li>Implement all learned concepts and functionalities</li>
+                                                </ul> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Syllubus Start -->
+
+    <!-- Courses Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
+                <h1 class="mb-5">Popular Courses</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/web_development.jpeg' %}" alt="">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <a href="/web_development' %}" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                <a href="https://wa.me/+919946886681" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0"></h3>
+                            <!-- <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small>(123)</small>
+                            </div> -->
+                            <h5 class="mb-4">Web Design & Development Course</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                            <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i></small> -->
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>6 months</small>
+                            <!-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/graphic_design.jpeg' %}" alt="">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <a href="/graphic_design' %}" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                <a href="https://wa.me/+919946886681" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0"></h3>
+                            <!-- <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small>(123)</small>
+                            </div> -->
+                            <h5 class="mb-4">Graphic Design & Digital Marketing</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                            <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i></small> -->
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>5 months</small>
+                            <!-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/data analtics vs data science.png' %}" alt="">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <a href="/datascience_ai' %}" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
+                                <a href="https://wa.me/+919946886681" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0"></h3>
+                            <!-- <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small>(123)</small>
+                            </div> -->
+                            <h5 class="mb-4">Data Science & AI</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                            <!-- <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i></small> -->
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>6 months</small>
+                            <!-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Courses End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
+                <h1 class="mb-5">Expert Instructors</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/male.jpg' %}" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Inamul Hasan</h5>
+                            <small>Data Scientist</small>
+                            <div>Canada, London, UAE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/male.jpg' %}" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Shabeer</h5>
+                            <small>Software Architect</small>
+                            <div><small>UAE, India</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/female.jpg' %}" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Sruthi A</h5>
+                            <small>Full Stack Python Expert</small>
+                            <div><small>Lead Trainer</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{% static 'img/female.jpg' %}" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Shahala</h5>
+                            <small>Graphic Design Expert</small>
+                            <div><small>Lead Trainer</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                    <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>
+                        1st floor, Stack Building,
+                        Near Smart Bazar,
+                        New Bus Stand, Kasaragod
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99 46 88 66 81</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@stackcentre.in</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/stackcentre/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://x.com/stackcentre?t=bcWrHs-0YH3i2uptqUkwyg&s=09"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100092986535359&mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://instagram.com/stackcentre?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/1.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/2.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/1.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/4.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/1.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="{% static 'img/gallery/4.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Connect With Us</h4>
+                    <p></p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="{% url 'index' %}">stackcentre.in</a>, All Right Reserved.
+
+                        <div class="d-none">
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br> -->
+                            <!-- Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="{% url 'index' %}">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+        function myclick_mern(){
+            document.getElementById('mern-stack').style.display='block';
+            document.getElementById('python').style.display='none';
+        }
+        function myclick_python(){
+            document.getElementById('mern-stack').style.display='none';
+            document.getElementById('python').style.display='block';
+        }
+    </script>
+
+    <script>
+        function readMore(id) {
+        var dots = document.getElementById("dots" + id);
+        var moreText = document.getElementById("more" + id);
+        var btnText = document.getElementById("readBtn" + id);
+        var paragraphText = document.getElementById("paragraphText")
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read More";
+                moreText.style.display = "none";
+                paragraphText.style.height = "150px";
+            }
+            else{
+                dots.style.display = "none";
+                btnText.innerHTML = "Read Less";
+                moreText.style.display = "inline";
+                paragraphText.style.height = paragraphText.scrollHeight + "px";
+            }
+    }
+    </script>
+</body>
+
+</html>

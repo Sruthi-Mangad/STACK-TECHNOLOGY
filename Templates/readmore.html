@@ -1,0 +1,44 @@
+<style>
+    #paragraphText {
+        overflow: hidden;
+        width: 300px;
+        text-align: justify;
+        height: 150px;
+        transition: height 0.3s ease;
+    }
+    
+    #readMoreButton {
+        margin-top: 10px;
+    }
+    
+</style>
+
+<div id="textContainer">
+    <p id="paragraphText">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec gravida massa. Ut condimentum ligula at fermentum sodales. Cras sit amet ipsum eget nisi sodales bibendum. Donec tempor magna eget diam lacinia fringilla. Morbi sodales neque eu metus lobortis, at tempor libero tempus. Vivamus gravida pharetra arcu, at lacinia nunc efficitur a. Suspendisse feugiat ipsum vel ligula tristique, id vehicula libero consequat. Donec faucibus, augue a euismod tincidunt, quam leo vestibulum enim, id ultricies odio justo in velit. Curabitur sed justo nec nulla commodo ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean efficitur posuere ex, id suscipit turpis volutpat vel.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere architecto officia excepturi harum rem voluptas distinctio magni corrupti, quo laborum numquam deleniti ducimus? Illo cumque ex nulla architecto velit optio!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dignissimos odio aspernatur corporis voluptates ab in ullam modi voluptas. Aliquid, ducimus eos. Enim qui inventore omnis voluptate similique, voluptatum aliquid.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere et adipisci laborum iste aliquam. Cupiditate deserunt ratione modi voluptate praesentium dolore dolores a, unde, non, eveniet harum libero temporibus ducimus.
+    </p>
+    <button id="readMoreButton" onclick="toggleReadMore()">Read More</button>
+</div>
+<script>
+    function toggleReadMore() {
+        var textContainer = document.getElementById("textContainer");
+        var paragraphText = document.getElementById("paragraphText");
+        var readMoreButton = document.getElementById("readMoreButton");
+        
+        if (paragraphText.classList.contains("expanded")) {
+            // Collapse the paragraph
+            paragraphText.classList.remove("expanded");
+            paragraphText.style.height = "150px"; // Set desired collapsed height
+            readMoreButton.innerText = "Read More";
+        } else {
+            // Expand the paragraph
+            paragraphText.classList.add("expanded");
+            paragraphText.style.height = paragraphText.scrollHeight + "px"; // Auto-expand to full height
+            readMoreButton.innerText = "Read Less";
+        }
+    }
+    
+</script>
